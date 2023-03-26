@@ -98,10 +98,10 @@ class CipheredGUI(BasicGUI):
         padded_text = padder.update(bytes(message, "utf8")) + padder.finalize()
 
         # Chiffrer le message en utilisant l'encryptor
-        ct = encryptor.update(padded_text) + encryptor.finalize()
+        _encryptor_ = encryptor.update(padded_text) + encryptor.finalize()
 
         # Retourner le vecteur d'initialisation et le cipher final
-        return (iv, ct)
+        return (iv, _encryptor_)
         
  
     def decrypt(self, message):
