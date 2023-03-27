@@ -134,7 +134,7 @@ class CipheredGUI(BasicGUI):
         # Fonction appelée pour envoyer un message
         encrypted_message = self.encrypt(message) # Chiffrement du message à envoyer
         self._client.send_message(encrypted_message)
-        self._client.send_message(encrypted_message)
+        
 
 
 if __name__ == "__main__":
